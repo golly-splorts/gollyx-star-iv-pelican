@@ -2,16 +2,16 @@
 
 set -euo pipefail
 
-if [ -z ${GOLLYX_STAR_PELICAN_HOME+x} ]; then
-	echo 'You must set the $GOLLYX_STAR_PELICAN_HOME environment variable to proceed.'
+if [ -z ${GOLLYX_PELICAN_HOME+x} ]; then
+	echo 'You must set the $GOLLYX_PELICAN_HOME environment variable to proceed.'
     echo 'Try sourcing environment.{STAGE}'
 	exit 1
 else 
-	echo "\$GOLLYX_STAR_PELICAN_HOME is set to '$GOLLYX_STAR_PELICAN_HOME'"
+	echo "\$GOLLYX_PELICAN_HOME is set to '$GOLLYX_PELICAN_HOME'"
 fi
 
 (
-cd ${GOLLYX_STAR_PELICAN_HOME}/pelican
+cd ${GOLLYX_PELICAN_HOME}/pelican
 rm -fr output
 echo "Generating pelican content..."
 pelican content
